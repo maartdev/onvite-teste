@@ -18,7 +18,7 @@ class Sugestao extends Model
     protected $casts = [
         'creditos' => 'decimal:2',
         'preco' => 'decimal:2',
-        'prazo' => 'datetime',
+        'prazo' => 'datetime', 
     ];
 
     public function pedido() {
