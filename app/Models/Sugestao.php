@@ -32,4 +32,5 @@ class Sugestao extends Model
             'status' => 'pendente',
         ]);
     }
+
 }

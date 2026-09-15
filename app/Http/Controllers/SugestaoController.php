@@ -27,6 +27,25 @@ class SugestaoController extends Controller
 
     public function aprovar(Request $request, int $id)
     {
-        // aprova
+        $sugestao = Sugestao::findOrFail($id);
+
+        if ($sugestao->status != 'pendente') 
+        {
+            return response()->json('Conflito', 409);
+        }
+
+        $dados = $request->validate([
+        'meta' => 'required|integer',
+        'preco' => 'required|numeric',
+        ]);
+
+        $sugestao->meta = $dados['meta'];
+        $sugestao->preco = $dados['preco'];
+        $sugestao->status = 'aprovado';
+        $sugestao->prazo = now()->addDays(30);
+        $sugestao->save();
+
+        return response()->json('Atualizado com sucesso', 200);
     }
 }
+
