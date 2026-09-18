@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('meta')->nullable();
             $table->decimal('preco', 10, 2)->nullable();
             $table->timestamp('prazo')->nullable();
+            $table->timestamp('data_publicacao')->nullable();
             $table->timestamps();
         });
     }

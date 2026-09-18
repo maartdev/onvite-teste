@@ -25,6 +25,10 @@ class Sugestao extends Model
         return $this->belongsTo(Pedido::class);
     }
 
+    public function curtidas() {
+        return $this->hasMany(Curtida::class);
+    }
+
     public static function criarComCreditos(int $pedidoId, float $valorPedido): self {
         return self::create([
             'pedido_id' => $pedidoId,
