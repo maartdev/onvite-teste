@@ -123,4 +123,5 @@ class SugestaoController extends Controller
             return response()->json(["mensagem" => "valor depositado"], 201);
         }
     }
+    
 }
