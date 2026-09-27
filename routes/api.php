@@ -14,3 +14,5 @@ Route::patch('/sugestoes/{id}/aprovar', [SugestaoController::class, 'aprovar']);
 Route::patch('/sugestoes/{id}/negar', [SugestaoController::class, 'negar']);
 
 Route::post('/sugestoes/{id}/curtir', [SugestaoController::class, 'curtida']);
+
+Route::post('/sugestoes/{id}/depositar', [SugestaoController::class, 'depositar']);
