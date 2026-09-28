@@ -103,7 +103,7 @@ class SugestaoController extends Controller
         $sugestao = Sugestao::findOrFail($id);
 
         if ($sugestao->status != 'aprovada') {
-            return response()->json(["erro" => "Sugestão já foi avaliada"], 409);
+            return response()->json(["erro" => "Sugestão não foi aprovada"], 422);
         }
 
         $dados = $request->validate([
@@ -120,7 +120,9 @@ class SugestaoController extends Controller
                 'valor' => $dados['valor'],
             ]);
 
-            return response()->json(["mensagem" => "valor depositado"], 201);
+            $disponivel = $sugestao->liberarMeta();
+
+            return response()->json(["mensagem" => "valor depositado", "disponibilidade" => $disponivel], 201);
         }
     }
     
