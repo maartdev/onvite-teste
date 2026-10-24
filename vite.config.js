@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'], // Lista os arquivos de entrada que o Vite processa
+            input: ['resources/css/app.css', 'resources/js/app.js'], // Lista os arquivos de entrada que o Vite processa (@vite)
             refresh: true, // recarrega o navegador quando você salva um arquivo blade
             fonts: [
                 bunny('Instrument Sans', {
@@ -14,7 +14,7 @@ export default defineConfig({
                 }),
             ],
         }),
-        tailwindcss(), // plugin do tailwind v4. Le as classe e aplica o CSS
+        tailwindcss(), // plugin do tailwind v4. Le as classes e gera o CSS
     ],
     server: {
         watch: {

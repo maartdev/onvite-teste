@@ -1,4 +1,6 @@
-@import 'tailwindcss';
+/* Arquivo de instruções */
+
+@import 'tailwindcss'; /* Carregue o TailWind */
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -9,3 +11,10 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/*
+@source -> diz onde procurar nomes de classe. Os caminhos são relativos à pasta do app.css. 
+../´´/´.blade.php significa “todos os .blade.php dentro de resources/ 
+
+@theme -> Personaliza o tema (font, cores)
+*/
